@@ -1,10 +1,12 @@
 import React from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
-function Navbar() {
+import { Link } from "react-router-dom/dist/umd/react-router-dom.development";
+
+export function Navbar() {
   return (
     <div>
-      <nav className="relative select-none bg-gray-50 lg:flex lg:items-stretch py-4 w-full shadow-md justify-between">
+      <nav className=" relative select-none bg-gray-50 lg:flex lg:items-stretch py-4 w-full shadow-md justify-between">
         <div className="flex flex-no-shrink h-12 ">
           <a
             href="#"
@@ -31,12 +33,12 @@ function Navbar() {
         </div>
         <div className="">
           <div className="lg:flex lg:items-stretch lg:justify-end ml-auto ">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal font-semibold no-underline flex items-center hover:text-gray-500"
             >
               Home
-            </a>
+            </Link>
             <a
               href="#"
               className="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal font-semibold no-underline flex items-center hover:text-gray-500"
@@ -62,12 +64,12 @@ function Navbar() {
             <CiSearch size={30} />
           </div>
           <div>
-            <AiOutlineUser size={30} />
+            <Link to="/Signin">
+              <AiOutlineUser size={30} />
+            </Link>
           </div>
         </div>
       </nav>
     </div>
   );
 }
-
-export default Navbar;

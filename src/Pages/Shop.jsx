@@ -1,6 +1,8 @@
 import React from "react";
 import QuantityNum from "../components/QuantityNum";
-function Shop() {
+import { Link } from "react-router-dom";
+
+export function Shop() {
   return (
     <div>
       <section class="py-10 bg-gray-100">
@@ -8,10 +10,7 @@ function Shop() {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                  alt="Hotel Photo"
-                />
+                <img src="W.JPG" alt="Hotel Photo" />
                 <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -27,15 +26,15 @@ function Shop() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                     />
                   </svg>
-
-                  <button class="text-sm">Add to cart</button>
+                  <Link to="/product">
+                    <button class="text-sm">Add to cart</button>
+                  </Link>
                 </div>
               </div>
 
               <div class="mt-1 p-2">
                 <h2 class="text-slate-700">Adobe Photoshop CC 2022</h2>
                 <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
-                <QuantityNum />
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$850</p>
@@ -65,10 +64,7 @@ function Shop() {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                  alt="Hotel Photo"
-                />
+                <img src="Web.JPG" alt="Hotel Photo" />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +81,6 @@ function Shop() {
               <div class="mt-1 p-2">
                 <h2 class="text-slate-700">The Hilton Hotel</h2>
                 <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
-                <QuantityNum />
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$850</p>
@@ -116,10 +111,7 @@ function Shop() {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                  alt="Hotel Photo"
-                />
+                <img src="We.JPG" alt="Hotel Photo" />
                 <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +135,6 @@ function Shop() {
               <div class="mt-1 p-2">
                 <h2 class="text-slate-700">The Hilton Hotel</h2>
                 <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
-                <QuantityNum />
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
@@ -173,10 +164,7 @@ function Shop() {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                  alt="Hotel Photo"
-                />
+                <img src="W.JPG" alt="Hotel Photo" />
                 <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +188,6 @@ function Shop() {
               <div class="mt-1 p-2">
                 <h2 class="text-slate-700">The Hilton Hotel</h2>
                 <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
-                <QuantityNum />
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
@@ -229,10 +216,7 @@ function Shop() {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1520256862855-398228c41684?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-                  alt="Hotel Photo"
-                />
+                <img src="We.JPG" alt="Hotel Photo" />
                 <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +240,6 @@ function Shop() {
               <div class="mt-1 p-2">
                 <h2 class="text-slate-700">The Hilton Hotel</h2>
                 <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
-                <QuantityNum />
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
@@ -285,10 +268,7 @@ function Shop() {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80"
-                  alt="Hotel Photo"
-                />
+                <img src="W.JPG" alt="Hotel Photo" />
                 <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -312,63 +292,6 @@ function Shop() {
               <div class="mt-1 p-2">
                 <h2 class="text-slate-700">The Hilton Hotel</h2>
                 <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
-                <QuantityNum />
-                <div class="mt-3 flex items-end justify-between">
-                  <p class="text-lg font-bold text-orange-700">$450</p>
-
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="h-4 w-4"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                      />
-                    </svg>
-
-                    <button class="text-sm">Add to cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
-            <div>
-              <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-                  alt="Hotel Photo"
-                />
-                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="h-4 w-4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                    />
-                  </svg>
-
-                  <button class="text-sm">Add to cart</button>
-                </div>
-              </div>
-
-              <div class="mt-1 p-2">
-                <h2 class="text-slate-700">The Hilton Hotel</h2>
-                <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
-                <QuantityNum />
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
@@ -398,10 +321,7 @@ function Shop() {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80"
-                  alt="Hotel Photo"
-                />
+                <img src="Web.JPG" alt="Hotel Photo" />
                 <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -425,7 +345,59 @@ function Shop() {
               <div class="mt-1 p-2">
                 <h2 class="text-slate-700">The Hilton Hotel</h2>
                 <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
-                <QuantityNum />
+
+                <div class="mt-3 flex items-end justify-between">
+                  <p class="text-lg font-bold text-orange-700">$450</p>
+
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="h-4 w-4"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                      />
+                    </svg>
+
+                    <button class="text-sm">Add to cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
+            <div>
+              <div class="relative flex items-end overflow-hidden rounded-xl">
+                <img src="W.JPG" alt="Hotel Photo" />
+                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-4 w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                    />
+                  </svg>
+
+                  <button class="text-sm">Add to cart</button>
+                </div>
+              </div>
+
+              <div class="mt-1 p-2">
+                <h2 class="text-slate-700">The Hilton Hotel</h2>
+                <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
@@ -457,5 +429,3 @@ function Shop() {
     </div>
   );
 }
-
-export default Shop;
