@@ -16,7 +16,7 @@ export function SignUp() {
                 Sign up to register your account
               </p>
             </div>
-            <div class="m-7">
+            <div class="m-7 border-2 p-6 rounded-xl">
               <form action="">
                 <div class="mb-6">
                   <label

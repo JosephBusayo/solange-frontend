@@ -7,6 +7,7 @@ import { Product } from "./components/Product";
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from "./components/SignIn";
 import { SignUp } from "./components/SignUp";
+import AboutUs from "./Pages/AboutUs";
 
 function App() {
   return (
@@ -27,6 +28,18 @@ function App() {
 
         <Route
           exact
+          path="/about"
+          element={
+            <>
+              <Navbar />
+              <AboutUs />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          exact
           path="/product"
           element={
             <>
@@ -39,6 +52,17 @@ function App() {
 
         <Route exact path="/Signin" element={<SignIn />} />
         <Route exact path="/Signup" element={<SignUp />} />
+        <Route
+          exact
+          path="/shop"
+          element={
+            <>
+              <Navbar />
+              <Shop />
+              <Footer />
+            </>
+          }
+        />
       </Routes>
     </>
   );

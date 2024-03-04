@@ -1,10 +1,23 @@
 import React from "react";
 import QuantityNum from "./QuantityNum";
+import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa6";
 
 export function Product() {
   return (
-    <div>
+    <div className="m-5">
       <section class="text-gray-700 body-font overflow-hidden bg-white">
+        <div>
+          <Link to="/">
+            <button>
+              <FaArrowLeft
+                size={40}
+                className="border-2 p-2 rounded-full hover:scale-105 bg-slate-300"
+              />
+            </button>
+          </Link>
+        </div>
+
         <div class="container px-5 py-24 mx-auto">
           <div class="lg:w-4/5 mx-auto flex flex-wrap">
             <img

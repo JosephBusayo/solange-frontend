@@ -4,14 +4,20 @@ import { Link } from "react-router-dom";
 
 export function Shop() {
   return (
-    <div>
-      <section class="py-10 bg-gray-100">
+    <div id="#shop">
+      <section className="bg-gray-50 py-10 ">
+        <div className="text-center ">
+          <h1 className="font-semibold text-5xl font-dmsans">CATEGORIES</h1>
+        </div>
+      </section>
+      <section class="py-10 bg-gray-50">
+        <div></div>
         <div class="mx-auto grid max-w-6xl  grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img src="W.JPG" alt="Hotel Photo" />
-                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -26,9 +32,6 @@ export function Shop() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                     />
                   </svg>
-                  <Link to="/product">
-                    <button class="text-sm">Add to cart</button>
-                  </Link>
                 </div>
               </div>
 
@@ -39,7 +42,7 @@ export function Shop() {
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$850</p>
 
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -54,8 +57,9 @@ export function Shop() {
                         d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                       />
                     </svg>
-
-                    <button class="text-sm">Add to cart</button>
+                    <Link to="/product">
+                      <button class="text-sm">Add to cart</button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -77,7 +81,6 @@ export function Shop() {
                   <span class="ml-1 text-sm text-slate-400">4.9</span>
                 </div>
               </div>
-
               <div class="mt-1 p-2">
                 <h2 class="text-slate-700">The Hilton Hotel</h2>
                 <p class="mt-1 text-sm text-slate-400">Lisbon, Portugal</p>
@@ -85,7 +88,7 @@ export function Shop() {
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$850</p>
 
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -101,7 +104,9 @@ export function Shop() {
                       />
                     </svg>
 
-                    <button class="text-sm">Add to cart</button>
+                    <Link to="/product">
+                      <button class="text-sm">Add to cart</button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -112,7 +117,7 @@ export function Shop() {
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img src="We.JPG" alt="Hotel Photo" />
-                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -127,8 +132,6 @@ export function Shop() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                     />
                   </svg>
-
-                  <button class="text-sm">Add to cart</button>
                 </div>
               </div>
 
@@ -138,7 +141,7 @@ export function Shop() {
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -154,7 +157,9 @@ export function Shop() {
                       />
                     </svg>
 
-                    <button class="text-sm">Add to cart</button>
+                    <Link to="/product">
+                      <button class="text-sm">Add to cart</button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -165,7 +170,7 @@ export function Shop() {
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img src="W.JPG" alt="Hotel Photo" />
-                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -180,8 +185,6 @@ export function Shop() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                     />
                   </svg>
-
-                  <button class="text-sm">Add to cart</button>
                 </div>
               </div>
 
@@ -191,7 +194,7 @@ export function Shop() {
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -207,7 +210,9 @@ export function Shop() {
                       />
                     </svg>
 
-                    <button class="text-sm">Add to cart</button>
+                    <Link to="/product">
+                      <button class="text-sm">Add to cart</button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -217,7 +222,7 @@ export function Shop() {
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img src="We.JPG" alt="Hotel Photo" />
-                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -232,8 +237,6 @@ export function Shop() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                     />
                   </svg>
-
-                  <button class="text-sm">Add to cart</button>
                 </div>
               </div>
 
@@ -243,7 +246,7 @@ export function Shop() {
 
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -259,7 +262,9 @@ export function Shop() {
                       />
                     </svg>
 
-                    <button class="text-sm">Add to cart</button>
+                    <Link to="/product">
+                      <button class="text-sm">Add to cart</button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -269,7 +274,7 @@ export function Shop() {
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img src="W.JPG" alt="Hotel Photo" />
-                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -284,8 +289,6 @@ export function Shop() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                     />
                   </svg>
-
-                  <button class="text-sm">Add to cart</button>
                 </div>
               </div>
 
@@ -296,7 +299,7 @@ export function Shop() {
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
 
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -312,7 +315,9 @@ export function Shop() {
                       />
                     </svg>
 
-                    <button class="text-sm">Add to cart</button>
+                    <Link to="/product">
+                      <button class="text-sm">Add to cart</button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -322,7 +327,7 @@ export function Shop() {
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img src="Web.JPG" alt="Hotel Photo" />
-                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -337,8 +342,6 @@ export function Shop() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                     />
                   </svg>
-
-                  <button class="text-sm">Add to cart</button>
                 </div>
               </div>
 
@@ -349,7 +352,7 @@ export function Shop() {
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
 
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -365,7 +368,9 @@ export function Shop() {
                       />
                     </svg>
 
-                    <button class="text-sm">Add to cart</button>
+                    <Link to="/product">
+                      <button class="text-sm">Add to cart</button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -375,7 +380,7 @@ export function Shop() {
             <div>
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img src="W.JPG" alt="Hotel Photo" />
-                <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -390,8 +395,6 @@ export function Shop() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                     />
                   </svg>
-
-                  <button class="text-sm">Add to cart</button>
                 </div>
               </div>
 
@@ -402,7 +405,7 @@ export function Shop() {
                 <div class="mt-3 flex items-end justify-between">
                   <p class="text-lg font-bold text-orange-700">$450</p>
 
-                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#b35348] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
+                  <div class="flex items-center space-x-1.5 rounded-lg bg-[#f5deb3] px-4 py-1.5 text-white duration-100 hover:bg-[#b34348]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -418,7 +421,9 @@ export function Shop() {
                       />
                     </svg>
 
-                    <button class="text-sm">Add to cart</button>
+                    <Link to="/product">
+                      <button class="text-sm">Add to cart</button>
+                    </Link>
                   </div>
                 </div>
               </div>
