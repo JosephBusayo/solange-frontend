@@ -7,22 +7,15 @@ export default {
   darkMode : "class",
   theme: {
     extend: {
-      colors :{
-        primaryColor : "#111827",
-        primaryColorLight : "rgb(249 250 251)",
-      }
-    }, 
-    container : {
-      center : true,
-      padding :{
-        DEFAULT : '1rem',
-      }
+      colors: {
+        primaryColor: "#111827",
+        primaryColorLight: "rgb(249 250 251)",
+      },
+      fontFamily: {
+        oswald: ["Oswald", "sans-serif"],
+        dmsans: ["DM Sans", "sans-serif"],
+      },
     },
-    fontFamily :{
-      oswald : ['Oswald', 'sans-serif'],
-      dmsans : ['DM Sans', 'sans-serif'],
-      
-    }
   },
   plugins: [],
 }
