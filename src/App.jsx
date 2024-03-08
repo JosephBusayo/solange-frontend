@@ -1,71 +1,36 @@
 import React from "react";
-import { Home } from "../src/Pages/Home";
-import { Navbar } from "./components/Navbar";
-import { Shop } from "./Pages/Shop";
-import { Footer } from "./components/Footer";
-import { Product } from "./components/Product";
+import "./App.css";
+import "./responsive.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route } from "react-router-dom";
-import { SignIn } from "./components/SignIn";
-import { SignUp } from "./components/SignUp";
-import AboutUs from "./Pages/AboutUs";
+import {HomeScreen} from "./screens/HomeScreen";
+import {SingleProduct} from "./screens/SingleProduct";
+import {Login} from "./screens/Login";
+import {Register} from "./screens/Register";
+import {CartScreen} from "./screens/CartScreen";
+import {ShippingScreen} from "./screens/ShippingScreen";
+import {ProfileScreen} from "./screens/ProfileScreen";
+import {PaymentScreen} from "./screens/PaymentScreen";
+import {PlaceOrderScreen} from "./screens/PlaceOrderScreen";
+import {OrderScreen} from "./screens/OrderScreen";
+/* import NotFound from "./screens/NotFound"; */
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Navbar />
-              <Home />
-              <Shop />
-              <Footer />
-            </>
-          }
-        />
-
-        <Route
-          exact
-          path="/about"
-          element={
-            <>
-              <Navbar />
-              <AboutUs />
-              <Footer />
-            </>
-          }
-        />
-
-        <Route
-          exact
-          path="/product"
-          element={
-            <>
-              <Navbar />
-              <Product />
-              <Footer />
-            </>
-          }
-        />
-
-        <Route exact path="/Signin" element={<SignIn />} />
-        <Route exact path="/Signup" element={<SignUp />} />
-        <Route
-          exact
-          path="/shop"
-          element={
-            <>
-              <Navbar />
-              <Shop />
-              <Footer />
-            </>
-          }
-        />
-      </Routes>
-    </>
+    <Routes>
+        <Route path="/" element=<HomeScreen/> exact />
+        <Route path="/products/:id" element=<SingleProduct/> />
+        <Route path="/login" element=<Login/> />
+        <Route path="/register" element=<Register/> />
+        <Route path="/profile" element=<ProfileScreen/> />
+        <Route path="/cart/:id?" element=<CartScreen/> />
+        <Route path="/shipping" element=<ShippingScreen/> />
+        <Route path="/payment" element=<PaymentScreen/> />
+        <Route path="/placeorder" element=<PlaceOrderScreen/> />
+        <Route path="/order" element=<OrderScreen/> />
+        {/* <Route path="*" element=<NotFound} /> */}
+    </Routes>
   );
-}
+};
 
 export default App;

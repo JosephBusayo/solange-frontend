@@ -1,8 +1,8 @@
 import React from "react";
 
-export function Footer() {
+export default function Footer() {
   return (
-    <div className="footer">
+    <div className="Navbar">
       <div className="justify-content-center d-flex">
         <div className="card-name">
           <img
@@ -38,5 +38,3 @@ export function Footer() {
     </div>
   );
 }
-
-export default Footer;
