@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
+
 function Navbar() {
   return (
     <div>
