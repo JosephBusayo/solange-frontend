@@ -1,7 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom/dist/umd/react-router-dom.development";
+import React, { useState } from "react";
+// import { Link, useHistory } from "react-router-dom";
 
 export function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  // const [history] = useHistory("");
+
+  const handleSignIn = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(
+          password
+        )}`,
+      });
+
+      if (response.ok) {
+        // Successful login, you may want to handle authentication here
+        history.push("/dashboard"); // Redirect to the dashboard or any other page
+      } else {
+        // Handle login error, show a message or perform appropriate actions
+        console.error("Login failed");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
+
   return (
     <div>
       <div class="flex items-center min-h-screen bg-white dark:bg-gray-900">
@@ -58,6 +86,7 @@ export function SignIn() {
                 <div class="mb-6">
                   <button
                     type="button"
+                    onClick={handleSignIn}
                     class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"
                   >
                     Sign in
@@ -71,7 +100,6 @@ export function SignIn() {
                   >
                     Sign up
                   </Link>
-                  .
                 </p>
               </form>
             </div>

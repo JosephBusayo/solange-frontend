@@ -38,7 +38,7 @@
     flex-direction: column;
     padding: 1.5rem;
     width: 70%;
-    height: 60%;
+    height: 100%;
     border: solid rgba(255, 149, 0, 0.531) 1px;
     border-bottom-left-radius: 15px;
     background-color: #ffff;
