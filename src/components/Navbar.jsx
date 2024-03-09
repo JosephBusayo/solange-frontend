@@ -53,7 +53,7 @@ const Navbar = () => {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      <i class="fas fa-user"></i>
+                      <i className="fas fa-user"></i>
                     </button>
                     <div className="dropdown-menu">
                       <Link className="dropdown-item" to="/profile">
