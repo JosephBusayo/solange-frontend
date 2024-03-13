@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <section>
-        <Link to={"/AddProduct"} style={{ textDecoration: "none" }}>
+        <Link to={"/admin/add-product"} style={{ textDecoration: "none" }}>
           <div className="sidebar-item">
             <IoCartOutline size={30} />
             <p>Add Product</p>
@@ -17,7 +17,7 @@ const Sidebar = () => {
       </section>
 
       <section>
-        <Link to={"/ListProduct"} style={{ textDecoration: "none" }}>
+        <Link to={"/admin/list-product"} style={{ textDecoration: "none" }}>
           <div className="sidebar-item">
             <CiBoxList size={30} />
             <p>Product List</p>

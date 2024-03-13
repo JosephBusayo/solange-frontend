@@ -27,13 +27,16 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch("http://localhost:4000/upload", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-      body: formData,
-    })
+    await fetch(
+      "https://solange.onrender.com/api/products/65dff32d840f27933d86dc12",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      }
+    )
       .then((resp) => resp.json())
       .then((data) => {
         responseData = data;
@@ -41,14 +44,17 @@ const AddProduct = () => {
     if (responseData.success) {
       product.image = responseData.image_url;
       console.log(produtc);
-      await fetch("http://localhost:4000/addproduct", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "content-Type": "application/json",
-        },
-        body: JSON.stringify(product),
-      })
+      await fetch(
+        "https://solange.onrender.com/api/products/65dff32d840f27933d86dc12",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "content-Type": "application/json",
+          },
+          body: JSON.stringify(product),
+        }
+      )
         .then((resp) => resp.json())
         .then((data) => {
           data.success ? alert("Product Added") : alert("Failed");

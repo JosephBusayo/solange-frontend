@@ -25,7 +25,6 @@ const App = () => {
         path="/"
         element=<>
           <HomeScreen />
-          <Sidebar />
         </>
       />
       <Route path="/products/:id" element=<SingleProduct /> />
@@ -37,10 +36,22 @@ const App = () => {
       <Route path="/payment" element=<PaymentScreen /> />
       <Route path="/placeorder" element=<PlaceOrderScreen /> />
       <Route path="/order" element=<OrderScreen /> />
-      <Route path="/addproduct" element=<AddProduct /> />
-      <Route path="/listproduct" element=<ListProduct /> />
+      <Route
+        path="/admin/add-product"
+        element=<div className="flex">
+          <Sidebar />
+          <AddProduct />
+        </div>
+      />
+      <Route
+        path="/admin/list-product"
+        element=<div className="flex">
+          <Sidebar />
+          <ListProduct />
+        </div>
+      />
 
-      {/* <Route path="*" element=<NotFound} /> */}
+      {/*<Route path="*" element=<NotFound/> */}
     </Routes>
   );
 };
