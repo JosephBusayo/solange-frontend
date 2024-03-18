@@ -1,43 +1,45 @@
-import React from "react";
+import React from 'react'
+import { Footer } from '../Components/Footer'
+import { Navbar } from '../Components/Navbar'
+import { Products } from '../Components/Products'
 
-export function Home() {
+export function Home({ products }) {
   return (
-    <div className="px-4 bg-gray-50">
-      <div className="min-h-screen flex items-center">
-        <div className="lg:flex lg:items-center bg-cover bg-center py-16 w-full">
-          <div className="container mx-auto text-black">
-            <div className="lg:flex items-center lg:order-last">
-              <div className="lg:w-1/2 text-center lg:text-left lg:pr-16">
-                <h1 className="text-4xl lg:text-5xl max-w-[700px] font-medium mb-6 lg:text-left">
-                  Welcome to <br />
-                  <span className="text-[#f5deb3] font-bold text-5xl lg:text-7xl">
-                    Solange Luxury Hair Store
-                  </span>
-                </h1>
-                <p className="text-lg lg:text-xl mb-12">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-                  viverra euismod odio, gravida pellentesque urna varius vitae.
-                </p>
-                <div className="text-center lg:text-left hover:transition transition-transform hover:scale-105">
-                  <a
-                    href="#"
-                    className="bg-[#f5deb3] text-white py-3 px-6 lg:px-12 font-semibold rounded-lg hover:bg-[#b35478]"
-                  >
-                    Purchase an item
-                  </a>
-                </div>
-              </div>
-              <div className="lg:w-1/2 mt-8 lg:mt-0">
-                <img
-                  src="close-up-portrait-beautiful-teenager.jpg"
-                  className="w-full object-cover rounded-xl h-[300px] lg:h-[420px]"
-                  alt="Layout Image"
-                />
-              </div>
+    <section>
+      <Navbar />
+
+      <div className="w-screen h-screen text-white bg-primaryColor"/* style={{
+        background: "linear-gradient(90deg, rgba(131, 126, 226, 1) 24%, rgba(114, 114, 226, 1) 58%, rgba(0, 212, 255, 1) 100%)"
+      }} */>
+        <div className="container mx-auto flex items-center justify-evenly flex-row-reverse">
+          <div>
+            <img className="lg:w-[520px] md:w-[350px] w-[250px]" alt="hero" src="/images/_hero.png" />
+          </div>
+
+          <div className="lg:w-5/12 w-full">
+            <h1 className="my-4 text-5xl font-bold leading-tight">
+              Turn your designs into production-ready frontend
+            </h1>
+            <p className="text-2xl mb-8">
+              Ship products 5-10x faster with your existing design tools, tech stacks & workflows!
+            </p>
+            <div className="flex mx-auto">
+              <button
+                className="hover:underline bg-white text-gray-800 font-bold rounded-full  py-4 px-8">
+                View Projects
+              </button>
+              <button
+                className="ml-4 hover:underline bg-white text-gray-800 font-bold rounded-full  py-4 px-8">
+                Plugins
+              </button>
             </div>
           </div>
+
         </div>
-      </div>
-    </div>
-  );
+      </div >
+
+      <Products products={products} />
+      <Footer />
+    </section>
+  )
 }

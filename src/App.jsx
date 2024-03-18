@@ -1,59 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import "./responsive.css";
-import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route } from "react-router-dom";
-import { HomeScreen } from "./screens/HomeScreen";
-import { SingleProduct } from "./screens/SingleProduct";
-import { Login } from "./screens/Login";
-import { Register } from "./screens/Register";
-import { CartScreen } from "./screens/CartScreen";
-import { ShippingScreen } from "./screens/ShippingScreen";
-import { ProfileScreen } from "./screens/ProfileScreen";
-import { PaymentScreen } from "./screens/PaymentScreen";
-import { PlaceOrderScreen } from "./screens/PlaceOrderScreen";
-import { OrderScreen } from "./screens/OrderScreen";
-import Sidebar from "./components/Sidebar/Sidebar";
-import AddProduct from "./components/AdminPage/AddProduct";
-import ListProduct from "./components/AdminPage/ListProduct";
 /* import NotFound from "./screens/NotFound"; */
+import { Home } from './Pages/Home';
+import { Navbar } from './Components/Navbar';
+import { Footer } from './Components/Footer';
+import { Login } from './Pages/Login';
 
 const App = () => {
-  return (
-    <Routes>
-      <Route
-        path="/"
-        element=<>
-          <HomeScreen />
-        </>
-      />
-      <Route path="/products/:id" element=<SingleProduct /> />
-      <Route path="/login" element=<Login /> />
-      <Route path="/register" element=<Register /> />
-      <Route path="/profile" element=<ProfileScreen /> />
-      <Route path="/cart/:id?" element=<CartScreen /> />
-      <Route path="/shipping" element=<ShippingScreen /> />
-      <Route path="/payment" element=<PaymentScreen /> />
-      <Route path="/placeorder" element=<PlaceOrderScreen /> />
-      <Route path="/order" element=<OrderScreen /> />
-      <Route
-        path="/admin/add-product"
-        element=<div className="flex">
-          <Sidebar />
-          <AddProduct />
-        </div>
-      />
-      <Route
-        path="/admin/list-product"
-        element=<div className="flex">
-          <Sidebar />
-          <ListProduct />
-        </div>
-      />
+  const BASE_URL =  "https://solange.onrender.com";
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-      {/*<Route path="*" element=<NotFound/> */}
-    </Routes>
+  const fetchProducts = async () => {
+    setIsLoading(true);
+    setError(null); // Clear any previous errors
+
+    try {
+      const response = await fetch(`${BASE_URL}/api/products`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch products');
+      }
+      const data = await response.json();
+      setProducts(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  console.log(products)
+
+  return (
+    <>
+      {/* {error && <p>Error: {error}</p>} */}
+
+      <Routes>
+        <Route exact path="/home" element={<Home products={products} isLoading={isLoading}/>} />
+        <Route exact path="/login" element={<Login />} />
+      </Routes>
+    </>
   );
-};
+}
 
 export default App;
+
