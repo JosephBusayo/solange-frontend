@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-
 /* import NotFound from "./screens/NotFound"; */
 import { Home } from './Pages/Home';
 import { Navbar } from './Components/Navbar';
