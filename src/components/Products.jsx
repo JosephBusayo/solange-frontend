@@ -5,15 +5,15 @@ export function Products({ products, isLoading }) {
 
 
     return (
-        <section >
+        <section id='products' className='ease-in'>
             {(isLoading || products.length === 0) && <p>Loading products...</p>}
-            <div className='flex flex-wrap gap-10 w-[86%] m-auto my-12'>
+            <div className='flex flex-wrap gap-10 w-[90%] m-auto my-12 px-5'>
 
                 {products.map((product, index) => (
-                    <div key={index} className="max-w-sm bg-slate-100 rounded-lg shadow w-[300px]">
-                        <a href="#">
+                    <a key={index} href={`/product/${product._id}`} className="max-w-sm bg-slate-100 rounded-lg shadow w-[300px]">
+                        <div>
                             <img className="p-8 rounded-t-lg" src={`${product.image}`} alt="product image" />
-                        </a>
+                        </div>
                         <div className="px-5 pb-5">
                             <a href="#">
                                 <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{product.name}</h5>
@@ -40,10 +40,10 @@ export function Products({ products, isLoading }) {
                             </div>
                             <div className="flex items-center justify-between">
                                 <span className="text-3xl font-bold text-gray-900 dark:text-white">{`$${product.price}`}</span>
-                                <a href="#" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                                <a href="#" className=" text-black bg-[#5DD9C1] hover:bg-black hover:text-[#5DD9C1] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add to cart</a>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
 

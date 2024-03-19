@@ -8,31 +8,32 @@ export function Home({ products }) {
     <section>
       <Navbar />
 
-      <div className="w-screen h-screen text-white bg-primaryColor"/* style={{
+      <div className="w-screen h-screen text-white bg-primaryColor overflow-hidden"/* style={{
         background: "linear-gradient(90deg, rgba(131, 126, 226, 1) 24%, rgba(114, 114, 226, 1) 58%, rgba(0, 212, 255, 1) 100%)"
       }} */>
-        <div className="container mx-auto flex items-center justify-evenly flex-row-reverse">
-          <div>
-            <img className="lg:w-[520px] md:w-[350px] w-[250px]" alt="hero" src="/images/_hero.png" />
+        <div className="container mx-auto md:flex md:items-center text-center md:text-left md:justify-evenly md:flex-row-reverse h-[100%]">
+          <div className="hidden md:block">
+            <img className="lg:w-[530px] md:w-[350px] w-[250px]" alt="hero" src="/images/_hero.png" />
           </div>
 
-          <div className="lg:w-5/12 w-full">
+          <div className="lg:w-5/12 w-full mt-20 h-[90%] flex flex-col align-center justify-center px-6 md:px-0">
             <h1 className="my-4 text-5xl font-bold leading-tight">
-              Turn your designs into production-ready frontend
+              Beautiful Hair for the Perfect Look
             </h1>
+
             <p className="text-2xl mb-8">
-              Ship products 5-10x faster with your existing design tools, tech stacks & workflows!
+              Explore our store of beautiful wigs to find the hair that makes you, You
             </p>
-            <div className="flex mx-auto">
-              <button
-                className="hover:underline bg-white text-gray-800 font-bold rounded-full  py-4 px-8">
-                View Projects
-              </button>
-              <button
-                className="ml-4 hover:underline bg-white text-gray-800 font-bold rounded-full  py-4 px-8">
-                Plugins
-              </button>
+
+            <div className="flex mx-auto md:mx-0">
+              <a href="#products" className='ease-in'>
+                <button
+                  className="hover:text-black hover:bg-[#5DD9C1] bg-black text-[#5DD9C1] font-bold rounded-md  py-4 px-8">
+                  {`Explore >`}
+                </button>
+              </a>
             </div>
+
           </div>
 
         </div>
