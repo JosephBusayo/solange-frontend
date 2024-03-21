@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Footer } from './../Components/Footer';
 import { Navbar } from './../Components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,8 +11,10 @@ import Rating from './../Components/Rating';
 
 
 export function ProductDetail() {
-  const { id } = useParams(); // Extract the product ID from the URL
+  const { id } = useParams(); // Extract the product ID from the URL 
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const productDetail = useSelector((state) => state.productDetail)
   const { loading, error, product } = productDetail
@@ -20,6 +22,11 @@ export function ProductDetail() {
     dispatch(listProductDetail(id))
   }, [dispatch, id])
 
+  const AddToCartHandler = (e) => {
+    e.preventDefault();
+
+    navigate(`/cart/${id}?qty=${qty}`)
+  }
   return (
     <section>
       <Navbar />
@@ -35,47 +42,48 @@ export function ProductDetail() {
               </div>
             </div>
 
-              <div className="product-dtl mt-8">
-                <div className="product-name">{product.name}</div>
-                <p>{product.desc}</p>
+            <div className="product-dtl mt-8">
+              <div className="product-name">{product.name}</div>
+              <p>{product.desc}</p>
 
-                <div className="product-count col-lg-7 ">
-                  <div className="flex-box d-flex justify-content-between align-items-center">
-                    <h6>Price</h6>
-                    <span>${product.price}</span>
-                  </div>
-                  <div className="flex-box d-flex justify-content-between align-items-center">
-                    <h6>Status</h6>
-                    {product.countInStock > 0 ? (
-                      <span>In Stock</span>
-                    ) : (
-                      <span>unavailable</span>
-                    )}
-                  </div>
-                  <div className="flex-box d-flex justify-content-between align-items-center">
-                    <h6>Reviews</h6>
-                    <Rating
-                      value={product.rating}
-                      text={`${product.numReviews} reviews`}
-                    />
-                  </div>
-                  {product.countInStock > 0 ? (
-                    <>
-                      <div className="flex-box d-flex justify-content-between align-items-center">
-                        <h6>Quantity</h6>
-                        <select>
-                          {[...Array(product.countInStock).keys()].map((x) => (
-                            <option key={x + 1} value={x + 1}>
-                              {x + 1}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                      <button className="round-black-btn">Add To Cart</button>
-                    </>
-                  ) : null}
+              <div className="product-count col-lg-7 ">
+                <div className="flex-box d-flex justify-content-between align-items-center">
+                  <h6>Price</h6>
+                  <span>${product.price}</span>
                 </div>
+                <div className="flex-box d-flex justify-content-between align-items-center">
+                  <h6>Status</h6>
+                  {product.countInStock > 0 ? (
+                    <span>In Stock</span>
+                  ) : (
+                    <span>unavailable</span>
+                  )}
+                </div>
+                <div className="flex-box d-flex justify-content-between align-items-center">
+                  <h6>Reviews</h6>
+                  <Rating
+                    value={product.rating}
+                    text={`${product.numReviews} reviews`}
+                  />
+                </div>
+                {product.countInStock > 0 ? (
+                  <>
+                    <div className="flex-box d-flex justify-content-between align-items-center">
+                      <h6>Quantity</h6>
+                      <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                        {[...Array(product.countInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </select>
+
+                    </div>
+                    <button onClick={AddToCartHandler} className="round-black-btn">Add To Cart</button>
+                  </>
+                ) : null}
               </div>
+            </div>
           </div>
 
           {/* RATING */}
