@@ -1,12 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProduct } from './../Redux/Actions/ProductActions';
+import Loading from './LoadingError/Loading';
+import Message from './LoadingError/Error';
 
-export function Products({ products, isLoading }) {
 
 
+export function Products({isLoading }) {
+    const dispatch = useDispatch()
+
+    const productList = useSelector((state) => state.productList)
+    const {loading, error, products} = productList
+    useEffect(() => {
+        dispatch(listProduct())
+    }, [dispatch])
 
     return (
         <section id='products' className='ease-in'>
-            {(isLoading || products.length === 0) && <p>Loading products...</p>}
+            {(loading || products.length === 0) && <Loading/>}
+            {error && <Message variant="alert-danger">{error}</Message>}
             <div className='flex flex-wrap gap-10 w-[90%] m-auto my-12 px-5'>
 
                 {products.map((product, index) => (
