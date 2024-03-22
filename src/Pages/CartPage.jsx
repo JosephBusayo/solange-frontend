@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Footer } from "../Components/Footer";
 import { Navbar } from "../Components/Navbar";
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from './../Redux/Actions/CartActions';
+import { addToCart, removeFromCart } from './../Redux/Actions/CartActions';
 window.scrollTo(0, 0);
 
 export const CartPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const qty = location.search ? Number(location.search.split("=")[1]) : 1;
+  const navigate = useNavigate()
 
   const cart = useSelector((state) => state.cart)
   const { cartItems } = cart
@@ -21,6 +22,13 @@ export const CartPage = () => {
     }
   }, [dispatch, id, qty]);
 
+  const checkoutHandler = () => {
+    navigate(`/login?redirect=shipping`)
+  }
+
+  const removeFromCartHandler = () => {
+    dispatch(removeFromCart(id))
+  }
   return (
     <>
       <Navbar />
@@ -53,7 +61,9 @@ export const CartPage = () => {
               {
                 cartItems.map((item, index) => (
                   <div className="cart-iterm row" key={index}>
-                    <div className="remove-button d-flex justify-content-center align-items-center">
+                    <div
+                      onClick={() => removeFromCartHandler(item.product)}
+                      className="remove-button d-flex justify-content-center align-items-center">
                       <i className="fas fa-times"></i>
                     </div>
                     <div className="cart-image col-md-3">
@@ -91,16 +101,19 @@ export const CartPage = () => {
               </div>
               <hr />
               <div className="cart-buttons d-flex align-items-center row">
-                <Link to="/" className="col-md-6 ">
+                <Link to="/home" className="col-md-6 ">
                   <button>Continue To Shopping</button>
                 </Link>
-                <div className="col-md-6 d-flex justify-content-md-end mt-3 mt-md-0">
-                  <button>
-                    <Link to="/shipping" className="text-white">
-                      Checkout
-                    </Link>
-                  </button>
-                </div>
+                {
+                  total > 0 && (
+                    <div className="col-md-6 d-flex justify-content-md-end mt-3 mt-md-0">
+                      <button onClick={checkoutHandler}>
+                        Checkout
+                      </button>
+                    </div>
+                  )
+                }
+
               </div>
             </>
           )
@@ -110,4 +123,3 @@ export const CartPage = () => {
     </>
   );
 };
-

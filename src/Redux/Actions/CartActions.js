@@ -1,4 +1,4 @@
-import { CART_ADD_ITEM } from './../Constants/CartConstants';
+import { CART_ADD_ITEM, CART_REMOVE_ITEM } from './../Constants/CartConstants';
 
 const BASE_URL = "https://solange.onrender.com";
 
@@ -20,6 +20,15 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
             countInStock: data.countInStock,
             qty,
         }
+    })
+    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems))
+}
+
+//REMOVE FROM CART
+export const removeFromCart = (id) => (dispatch, getState) => {
+    dispatch({
+        type: CART_REMOVE_ITEM,
+        payload : id,
     })
     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems))
 }
