@@ -4,9 +4,9 @@ import { Footer } from './../Components/Footer';
 import { Navbar } from './../Components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProductDetail } from "../Redux/Actions/ProductActions";
-import Loading from "./../components/LoadingError/Loading";
-import Message from "./../components/LoadingError/Error";
-import Rating from "./../components/Rating";
+import Loading from "./../Components/LoadingError/Loading";
+import Message from "./../Components/LoadingError/Error";
+import Rating from "./../Components/Rating";
 
 export function ProductDetail() {
   const { id } = useParams(); // Extract the product ID from the URL 
@@ -79,7 +79,7 @@ export function ProductDetail() {
                       ))}
                     </select>
                   </div>
-                  <button className="mt-4 hover:text-black hover:bg-[#5DD9C1] bg-black text-[#5DD9C1] font-bold rounded-md  py-4 px-8">
+                  <button onClick={AddToCartHandler} className="mt-4 hover:text-black hover:bg-[#5DD9C1] bg-black text-[#5DD9C1] font-bold rounded-md  py-4 px-8">
                     Add To Cart
                   </button>
                 </>

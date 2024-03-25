@@ -1,7 +1,7 @@
 import React from 'react'
-import { Footer } from '../components/Footer'
-import { Navbar } from '../components/Navbar'
-import { Products } from '../components/Products'
+import { Footer } from '../Components/Footer'
+import { Navbar } from '../Components/Navbar'
+import { Products } from '../Components/Products'
 
 export function Home() {
   return (
