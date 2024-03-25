@@ -3,7 +3,7 @@ import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
 import { Products } from '../components/Products'
 
-export function Home({ products }) {
+export function Home() {
   return (
     <section>
       <Navbar />
@@ -39,7 +39,7 @@ export function Home({ products }) {
         </div>
       </div >
 
-      <Products products={products} />
+      <Products  />
       <Footer />
     </section>
   )

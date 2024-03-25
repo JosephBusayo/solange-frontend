@@ -30,7 +30,7 @@ export const listProductDetail = (id) => async (dispatch) => {
         dispatch({ type: PRODUCT_DETAIL_REQUEST })
         const response = await fetch(`${BASE_URL}/api/products/${id}`);
         if (!response.ok) {
-            throw new Error('Failed to fetch products');
+            throw new Error('Failed to get product');
         }
         const data = await response.json(); 
         dispatch({ type: PRODUCT_DETAIL_SUCCESS, payload: data })

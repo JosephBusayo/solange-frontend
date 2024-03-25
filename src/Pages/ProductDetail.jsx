@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Footer } from "./../components/Footer";
-import { Navbar } from "./../components/Navbar";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { Footer } from './../Components/Footer';
+import { Navbar } from './../Components/Navbar';
+import { useDispatch, useSelector } from 'react-redux';
 import { listProductDetail } from "../Redux/Actions/ProductActions";
 import Loading from "./../components/LoadingError/Loading";
 import Message from "./../components/LoadingError/Error";
 import Rating from "./../components/Rating";
 
 export function ProductDetail() {
-  const { id } = useParams(); // Extract the product ID from the URL
-  const dispatch = useDispatch();
+  const { id } = useParams(); // Extract the product ID from the URL 
+  const [qty, setQty] = useState(1);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const productDetail = useSelector((state) => state.productDetail);
   const { loading, error, product } = productDetail;
@@ -18,6 +20,11 @@ export function ProductDetail() {
     dispatch(listProductDetail(id));
   }, [dispatch, id]);
 
+  const AddToCartHandler = (e) => {
+    e.preventDefault();
+
+    navigate(`/cart/${id}?qty=${qty}`)
+  }
   return (
     <section className="bg-gray-100 min-h-screen">
       <Navbar />
@@ -35,7 +42,6 @@ export function ProductDetail() {
                 />
               </div>
             </div>
-
             <div className="w-full md:w-1/2 mt-6 md:mt-0 md:ml-6">
               <h2 className="text-3xl font-semibold text-gray-800">
                 {product.name}
