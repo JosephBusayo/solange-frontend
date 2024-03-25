@@ -8,9 +8,6 @@ export const listProduct = () => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST })
         const response = await fetch(`${BASE_URL}/api/products`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch products');
-        }
         const data = await response.json(); 
         /* const {data} = await axios.get(`${BASE_URL}/api/products`)   */   
         dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data })
@@ -29,9 +26,6 @@ export const listProductDetail = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAIL_REQUEST })
         const response = await fetch(`${BASE_URL}/api/products/${id}`);
-        if (!response.ok) {
-            throw new Error('Failed to get product');
-        }
         const data = await response.json(); 
         dispatch({ type: PRODUCT_DETAIL_SUCCESS, payload: data })
     } catch (error) {
