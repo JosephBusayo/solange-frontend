@@ -20,7 +20,7 @@ export const CartPage = () => {
     if (id) {
       dispatch(addToCart(id, qty));
     }
-  }, [dispatch, id, qty]);
+  }, [dispatch, id, qty]); 
 
   const checkoutHandler = () => {
     navigate(`/login?redirect=shipping`)
