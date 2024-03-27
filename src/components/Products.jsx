@@ -17,7 +17,7 @@ export function Products({isLoading }) {
 
     return (
         <section id='products' className='ease-in'>
-            {(loading || products.length === 0) && <Loading/>}
+            {(loading || products.length === 0 || products === undefined) && <Loading/>}
             {error && <Message variant="alert-danger">{error}</Message>}
             <div className='flex flex-wrap gap-10 w-[90%] m-auto my-12 px-5'>
 

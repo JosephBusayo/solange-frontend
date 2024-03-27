@@ -1,7 +1,7 @@
 import React from 'react'
-import { Footer } from '../components/Footer'
-import { Navbar } from '../components/Navbar'
-import { Products } from '../components/Products'
+import { Footer } from '../Components/Footer'
+import { Navbar } from '../Components/Navbar'
+import { Products } from '../Components/Products'
 
 export function Home() {
   return (
@@ -17,7 +17,7 @@ export function Home() {
           </div>
 
           <div className="lg:w-5/12 w-full mt-20 h-[90%] flex flex-col align-center justify-center px-6 md:px-0">
-            <h1 className="my-4 text-5xl md:text-6xl font-bold leading-tight">
+            <h1 className="my-4 text-5xl font-bold leading-tight">
               Beautiful Hair for the Perfect Look
             </h1>
 

@@ -4,9 +4,9 @@ import { Footer } from './../Components/Footer';
 import { Navbar } from './../Components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProductDetail } from "../Redux/Actions/ProductActions";
-import Loading from "./../components/LoadingError/Loading";
-import Message from "./../components/LoadingError/Error";
-import Rating from "./../components/Rating";
+import Loading from "./../Components/LoadingError/Loading";
+import Message from "./../Components/LoadingError/Error";
+import Rating from "./../Components/Rating";
 
 export function ProductDetail() {
   const { id } = useParams(); // Extract the product ID from the URL 
@@ -71,7 +71,10 @@ export function ProductDetail() {
                 <>
                   <div className="mt-2">
                     <h6 className="font-semibold">Quantity</h6>
-                    <select className="block w-24 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    <select 
+                    value={qty}
+                    onChange={(e) => setQty(e.target.value)} 
+                    className="block w-24 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                       {[...Array(product.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
@@ -79,8 +82,8 @@ export function ProductDetail() {
                       ))}
                     </select>
                   </div>
-                  <button className="mt-4 hover:text-black hover:bg-[#5DD9C1] bg-black text-[#5DD9C1] font-bold rounded-md  py-4 px-8">
-                    Add To Cart
+                  <button onClick={AddToCartHandler} className="mt-4 hover:text-black hover:bg-[#5DD9C1] bg-black text-[#5DD9C1] font-bold rounded-md  py-4 px-8">
+                    Add To Cart 
                   </button>
                 </>
               )}
