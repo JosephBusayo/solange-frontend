@@ -1,9 +1,10 @@
 import { React, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 
-
-export function Navbar({ handleThemeChange, theme }) {
-
+export function Navbar() {
+  const cart = useSelector((state) => state.cart)
+  const { cartItems } = cart
   return (
     <section>
       {/* Top Header */}
@@ -41,9 +42,10 @@ export function Navbar({ handleThemeChange, theme }) {
             <div className="container ">
               <div className="row ">
                 <div className="col-6 d-flex align-items-center">
-                  <Link className="navbar-brand" to="/">
-                    <img alt="logo" src="/images/logo.png" />
-                  </Link>
+                  <a href="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="/logo-cropped.png" className="h-8" alt="Flowbite Logo" />
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Solange</span>
+                  </a>
                 </div>
                 <div className="col-6 d-flex align-items-center justify-content-end Login-Register">
                   <div className="btn-group">
@@ -68,7 +70,7 @@ export function Navbar({ handleThemeChange, theme }) {
                   </div>
                   <Link to="/cart" className="cart-mobile-icon">
                     <i className="fas fa-shopping-bag"></i>
-                    <span className="badge">4</span>
+                    <span className="badge">{cartItems.length}</span>
                   </Link>
                 </div>
                 <div className="col-12 d-flex align-items-center">
@@ -89,11 +91,10 @@ export function Navbar({ handleThemeChange, theme }) {
 
           {/* PC HEADER */}
           <div className="pc-header md:flex md:justify-between">
-            <div className="">
-              <Link className="navbar-brand" to="/">
-                <img alt="logo" src="/images/logo.png" />
-              </Link>
-            </div>
+            <a href="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="/logo-cropped.png" className="h-8" alt="Flowbite Logo" />
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Solange</span>
+            </a>
 
             <div className="">
               <form className="input-group">
@@ -132,7 +133,7 @@ export function Navbar({ handleThemeChange, theme }) {
 
               <Link to="/cart">
                 <i className="fas fa-shopping-bag"></i>
-                <span className="badge">4</span>
+                <span className="badge">{cartItems.length}</span>
               </Link>
             </div>
 

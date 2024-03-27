@@ -26,8 +26,8 @@ export const CartPage = () => {
     navigate(`/login?redirect=shipping`)
   }
 
-  const removeFromCartHandler = () => {
-    dispatch(removeFromCart(id))
+  const removeFromCartHandler = (item_id) => {
+    dispatch(removeFromCart(item_id))
   }
   return (
     <>
