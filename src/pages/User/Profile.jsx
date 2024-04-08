@@ -52,84 +52,74 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-[#0E1629] min-h-screen">
-      <div className="px-4 flex justify-around items-center flex-wrap gap-8 w-full text-gray-500 overflow-hidden">
-        <form
-          onSubmit={submitHandler}
-          className="container w-[21rem] md:w-[33rem] 2xl:w-[36rem]"
-        >
-          <h2 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2 text-white">
-            Update Profile
-          </h2>
-          <div>
-            <label className="flex items-center gap-3 text-lg font-medium mb-2 ">
-              Name
-            </label>
-            <input
-              type="text"
-              placeholder="Enter name"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              autoComplete="off"
-            />
-          </div>
+    <div className="bg-gray-100 min-h-screen flex justify-center items-center">
+      <form
+        onSubmit={submitHandler}
+        className="bg-white rounded-lg shadow-lg p-8 w-full max-w-xl"
+      >
+        <h2 className="text-lg md:text-xl font-semibold mb-4 text-gray-800">
+          Update Profile
+        </h2>
+        <div className="mb-6">
+          <label className="block text-gray-700 mb-2">Name</label>
+          <input
+            type="text"
+            placeholder="Enter name"
+            className="input-field p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-gray-300 placeholder-gray-700 text-black outline-none border-[#57575b] focus:border-[#FF2E63]"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            autoComplete="off"
+          />
+        </div>
 
-          <div>
-            <label className="flex items-center gap-3 text-lg font-medium mb-2 ">
-              Email Address
-            </label>
-            <input
-              type="email"
-              placeholder="Enter email"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              autoComplete="off"
-            />
-          </div>
+        <div className="mb-6">
+          <label className="block text-gray-700 mb-2">Email Address</label>
+          <input
+            type="email"
+            placeholder="Enter email"
+            className="input-field p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-gray-300 placeholder-gray-700 text-black outline-none border-[#57575b] focus:border-[#FF2E63]"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="off"
+          />
+        </div>
 
-          <div>
-            <label className="flex items-center gap-3 text-lg font-medium mb-2 ">
-              Password
-            </label>
-            <input
-              type="password"
-              placeholder="Enter password"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              autoComplete="off"
-            />
-          </div>
+        <div className="mb-6">
+          <label className="block text-gray-700 mb-2">Password</label>
+          <input
+            type="password"
+            placeholder="Enter password"
+            className="input-field p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-gray-300 placeholder-gray-700 text-black outline-none border-[#57575b] focus:border-[#FF2E63]"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="off"
+          />
+        </div>
 
-          <div>
-            <label className="flex items-center gap-3 text-lg font-medium mb-2 ">
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              placeholder="Confirm password"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-          </div>
+        <div className="mb-6">
+          <label className="block text-gray-700 mb-2">Confirm Password</label>
+          <input
+            type="password"
+            placeholder="Confirm password"
+            className="input-field p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-gray-300 placeholder-gray-700 text-black outline-none border-[#57575b] focus:border-[#FF2E63]"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
 
-          <div className="flex justify-between items-center gap-3 w-[320px] md:w-[460px] 2xl:w-[520px]">
-            <button className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[45%] px-4 py-2 rounded cursor-pointer text-base font-semibold">
-              <Link to="/user-orders">My Orders</Link>
-            </button>
-            <button
-              type="submit"
-              className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none  w-[45%] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
-            >
-              Update
-            </button>
-          </div>
-          {loadingUpdateProfile && <Loader />}
-        </form>
-      </div>
+        <div className="flex justify-between items-center">
+          <button className="bg-[#0e1629] hover:bg-[#060911] transition-colors text-[#5DD9C1] border-none outline-none px-6 py-3 rounded cursor-pointer text-base font-semibold">
+            <Link to="/user-orders">My Orders</Link>
+          </button>
+          <button
+            type="submit"
+            className="bg-[#0e1629] hover:bg-[#060911] transition-colors text-[#5DD9C1] border-none outline-none px-6 py-3 rounded cursor-pointer text-base font-semibold"
+          >
+            Update
+          </button>
+        </div>
+        {loadingUpdateProfile && <Loader />}
+      </form>
     </div>
   );
 };

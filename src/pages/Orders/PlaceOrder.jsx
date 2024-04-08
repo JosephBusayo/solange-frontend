@@ -43,7 +43,7 @@ const PlaceOrder = () => {
   };
 
   return (
-    <div className="bg-[#0E1629] min-h-screen">
+    <div className="bg-[#fff] min-h-screen">
       <ContentWrapper>
         <ProgressSteps step1 step2 step3 />
         <div className="mx-auto mt-8 px-4">
@@ -51,7 +51,7 @@ const PlaceOrder = () => {
             <Message>Your cart is empty</Message>
           ) : (
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
+              <table className="w-full border-collapse text-black">
                 <thead>
                   <tr>
                     <td className="px-1 py-2 text-left align-top">Image</td>
@@ -93,11 +93,11 @@ const PlaceOrder = () => {
             </div>
           )}
 
-          <div className="mt-8">
+          <div className="mt-8 text-black">
             <h2 className="text-xl lg:text-2xl font-semibold mb-5">
               Order Summary
             </h2>
-            <div className="flex justify-between flex-wrap p-4 bg-[#0E1629] border border-[#444444] items-center gap-8">
+            <div className="flex justify-between flex-wrap p-4 bg-[#fff] border border-[#444444] items-center gap-8">
               <ul className="flex flex-col gap-2">
                 <li>
                   <span className="font-semibold mb-4">Items:</span> $
@@ -143,7 +143,7 @@ const PlaceOrder = () => {
             <div className="flex justify-center items-center w-full">
               <button
                 type="button"
-                className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[320px] md:w-[460px] 2xl:w-[520px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
+                className="bg-[#0e1629] hover:bg-[#060911] transition-colors text-[#5DD9C1] border-none outline-none w-[320px] md:w-[460px] 2xl:w-[520px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
                 disabled={cart.cartItems === 0}
                 onClick={placeOrderHandler}
               >

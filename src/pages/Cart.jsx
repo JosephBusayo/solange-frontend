@@ -6,6 +6,7 @@ import { addToCart, removeFromCart } from "../redux/features/cart/cartSlice";
 import { BsArrowLeft } from "react-icons/bs";
 
 import EmptyBag from "../assets/emptybag.png";
+import Footer from "./Footer";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -173,6 +174,7 @@ const Cart = () => {
           </>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
