@@ -75,10 +75,11 @@ const Navigation = () => {
 
   return (
     <div
-      className={`${mobileMenu
-          ? " bg-[#af796d] fixed top-0 left-0 right-0 w-full h-[70px] shadow-md "
-          : "bg-[#af796d] backdrop-blur-lg shadow"
-        } fixed top-0 left-0 w-full h-[80px]  p-5 text-[#D8E2F2] text-center z-50 transition-all ease-in duration-300 flex justify-between items-center`}
+      className={`${
+        mobileMenu
+          ? " bg-[#0e1629] hover:bg-[#060911] fixed top-0 left-0 right-0 w-full h-[70px] shadow-md "
+          : "bg-[#0e1629] hover:bg-[#060911] backdrop-blur-lg shadow-md"
+      } fixed top-0 left-0 w-full h-[80px]  p-5 text-[#D8E2F2] text-center z-50 transition-all ease-in duration-300 flex justify-between items-center`}
     >
       <ContentWrapper>
         <div className="flex justify-between items-center text-[#D8E2F2]">
@@ -145,7 +146,6 @@ const Navigation = () => {
             </div>
 
             <div className="flex items-center">
-
               <Link to="/" className=" md:flex items-center w-[50px]">
                 {/*LOGO */}
                 <motion.img
@@ -156,13 +156,15 @@ const Navigation = () => {
                   className="w-[30px]"
                 />
               </Link>
-              <p className="hidden md:block md:text-white md:text-3xl">SOLANGE HAIR</p>
-
+              <p className="hidden md:block md:text-[#5DD9C1] md:text-3xl">
+                SOLANGE HAIR
+              </p>
             </div>
 
             <div
-              className={`${userInfo?.isAdmin ? "flex gap-2 md:gap-3" : ""
-                } relative`}
+              className={`${
+                userInfo?.isAdmin ? "flex gap-2 md:gap-3" : ""
+              } relative`}
             >
               <button
                 onClick={toggleDropdown}
@@ -178,10 +180,11 @@ const Navigation = () => {
                 {userInfo && (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className={`h-5 w-5 ml-1 ${dropdownOpen
+                    className={`h-5 w-5 ml-1 ${
+                      dropdownOpen
                         ? "transform rotate-0 transition-transform"
                         : "transform rotate-360 transition-transform"
-                      }`}
+                    }`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="white"
@@ -315,8 +318,9 @@ const Navigation = () => {
         {/* Mobile Menu  */}
         {mobileMenu && (
           <div
-            className={`${mobileMenu ? "mobile bg-[#fff] h-[100vh]" : "desktop"
-              }  flex  text-[#000000] pt-4 `}
+            className={`${
+              mobileMenu ? "mobile bg-gray-200 h-[100vh]" : "desktop"
+            }  flex  text-[#000000] pt-4 `}
             onClick={() => setMobileMenu(false)}
           >
             <ContentWrapper>

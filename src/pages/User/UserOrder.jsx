@@ -8,7 +8,7 @@ const UserOrder = () => {
   const { data: orders, isLoading, error } = useGetMyOrdersQuery();
 
   return (
-    <div className=" mx-auto bg-[#0E1629] min-h-[100vh] text-white">
+    <div className=" mx-auto bg-[#fff] min-h-[100vh] text-black">
       <ContentWrapper>
         <h2 className="text-2xl font-semibold mb-4">My Orders </h2>
 

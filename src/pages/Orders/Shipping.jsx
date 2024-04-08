@@ -39,20 +39,22 @@ const Shipping = () => {
   }, [navigate, shippingAddress]);
 
   return (
-    <div className="bg-white text-black mx-auto mt-10 min-h-screen">
+    <div className="bg-[#fff] text-black w-full mx-auto m-10 min-h-screen">
       <ContentWrapper>
         <ProgressSteps step1 step2 />
-        <div className="mt-[2rem] flex w-full h-full flex-wrap">
+        <div className="mt-8 flex w-full h-full flex-wrap ">
           <form
             onSubmit={submitHandler}
-            className="w-[40rem] mx-auto ml-[13%] md:ml-auto"
+            className="w-[600px] md:w-120 2xl:w-136 mx-auto border-2 border-gray-500 p-8 rounded-lg bg-gray-200"
           >
-            <h1 className="text-2xl font-semibold mb-4">Shipping</h1>
-            <div className="mb-4">
-              <label className="block text-white mb-2">Address</label>
+            <h1 className="text-2xl font-semibold mb-4 text-black">Shipping</h1>
+            <div className="mb-4 ">
+              <label className="block text-md text-gray-700 mb-2">
+                Address
+              </label>
               <input
                 type="text"
-                className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                className="input-field p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#fff] placeholder-gray-400 text-black outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter address"
                 value={address}
                 required
@@ -61,10 +63,10 @@ const Shipping = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-white mb-2">City</label>
+              <label className="block text-gray-700 mb-2">City</label>
               <input
                 type="text"
-                className="t-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                className="input-field p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#fff] placeholder-gray-400 text-black outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter city"
                 value={city}
                 required
@@ -73,10 +75,10 @@ const Shipping = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-white mb-2">Postal Code</label>
+              <label className="block text-gray-700 mb-2">Postal Code</label>
               <input
                 type="text"
-                className="p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                className="input-field p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#fff] placeholder-gray-400 text-black outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter postal code"
                 value={postalCode}
                 required
@@ -85,10 +87,10 @@ const Shipping = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-white mb-2">Country</label>
+              <label className="block text-gray-700 mb-2">Country</label>
               <input
                 type="text"
-                className="p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                className="input-field p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#fff] placeholder-gray-400 text-black outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter country"
                 value={country}
                 required
@@ -116,7 +118,7 @@ const Shipping = () => {
             </div>
 
             <button
-              className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[320px] md:w-[460px] 2xl:w-[520px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
+              className="bg-[#0e1629] hover:bg-[#060911] transition-colors text-[#5DD9C1] border-none outline-none w-full px-4 py-2 rounded cursor-pointer my-4 text-base font-semibold"
               type="submit"
             >
               Continue
