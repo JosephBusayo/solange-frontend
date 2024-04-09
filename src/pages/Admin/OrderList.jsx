@@ -8,9 +8,9 @@ const OrderList = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
 
   return (
-    <div className="bg-gray-200 min-h-[100vh]">
+    <div className="bg-gray-100 min-h-screen">
       {isLoading ? (
-        <div className="w-full h-[80vh] flex justify-center items-center">
+        <div className="flex justify-center items-center h-screen">
           <Loader />
         </div>
       ) : error ? (
@@ -18,77 +18,131 @@ const OrderList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <table className="container mx-auto">
+        <div className="overflow-x-auto">
           {/* <AdminMenu /> */}
 
-          <thead className="w-full border">
-            <tr className="mb-[5rem] text-black">
-              <th className="text-left pl-1">ITEMS</th>
-              <th className="text-left pl-1">ID</th>
-              <th className="text-left pl-1">USER</th>
-              <th className="text-left pl-1">DATA</th>
-              <th className="text-left pl-1">TOTAL</th>
-              <th className="text-left pl-1">PAID</th>
-              <th className="text-left pl-1">DELIVERED</th>
-              <th></th>
-            </tr>
-          </thead>
-
-          <tbody>
+          <div className="grid md:hidden gap-4 grid-cols-1">
             {orders.map((order) => (
-              <tr key={order._id} className="text-black">
-                <td>
+              <div key={order._id} className="bg-white shadow-md rounded-lg">
+                <div className="px-4 py-7">
                   <img
                     src={order.orderItems[0].image}
                     alt={order._id}
-                    className="w-[5rem] pt-4"
+                    className="w-full h-auto object-cover rounded-md"
                   />
-                </td>
-                <td>{order._id}</td>
-
-                <td>{order.user ? order.user.username : "N/A"}</td>
-
-                <td>
-                  {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
-                </td>
-
-                <td>$ {order.totalPrice}</td>
-
-                <td className="py-2 text-white">
-                  {order.isPaid ? (
-                    <p className="px-2 py-1 text-center bg-[#2765EC] max-w-[70%] rounded">
-                      Completed
-                    </p>
-                  ) : (
-                    <p className="px-2 py-1 text-center bg-[#FF2E63] max-w-[70%] rounded">
-                      Pending
-                    </p>
-                  )}
-                </td>
-
-                <td className="px-2 py-2 text-white">
-                  {order.isDelivered ? (
-                    <p className="px-2 py-1 text-center bg-[#2765EC] max-w-[70%] rounded">
-                      Completed
-                    </p>
-                  ) : (
-                    <p className="px-2 py-1 text-center bg-[#FF2E63] max-w-[70%] rounded">
-                      Pending
-                    </p>
-                  )}
-                </td>
-
-                <td>
+                </div>
+                <div className="p-4">
+                  <p className="text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    ID: {order._id}
+                  </p>
+                  <p className="text-sm font-medium text-gray-800">
+                    User: {order.user ? order.user.username : "N/A"}
+                  </p>
+                  <p className="text-sm font-medium text-gray-800">
+                    Date:{" "}
+                    {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
+                  </p>
+                  <p className="text-sm font-medium text-gray-800">
+                    Total: ${order.totalPrice}
+                  </p>
+                  <p className="py-3">
+                    <span
+                      className={`px-2 py-1 text-center rounded font-semibold ${
+                        order.isPaid
+                          ? "bg-green-500 text-white"
+                          : "bg-red-500 text-white"
+                      }`}
+                    >
+                      {order.isPaid ? "Completed" : "Pending"}
+                    </span>
+                  </p>
+                  <p>
+                    <span
+                      className={`px-2 py-1 text-center rounded font-semibold ${
+                        order.isDelivered
+                          ? "bg-green-500 text-white"
+                          : "bg-red-500 text-white"
+                      }`}
+                    >
+                      {order.isDelivered ? "Completed" : "Pending"}
+                    </span>
+                  </p>
                   <Link to={`/order/${order._id}`}>
-                    <button className="px-2 py-1 text-center text-white bg-[#2765EC] max-w-[70%] rounded">
+                    <button className="mt-4 px-3 py-1 text-white bg-blue-500 rounded">
                       More
                     </button>
                   </Link>
-                </td>
-              </tr>
+                </div>
+              </div>
             ))}
-          </tbody>
-        </table>
+          </div>
+
+          <table className="hidden md:table min-w-full divide-y divide-gray-200 bg-white shadow-md rounded-lg">
+            <thead className="bg-gray-200">
+              <tr className="text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                <th className="px-4 py-3">ITEMS</th>
+                <th className="px-4 py-3">ID</th>
+                <th className="px-4 py-3">USER</th>
+                <th className="px-4 py-3">DATE</th>
+                <th className="px-4 py-3">TOTAL</th>
+                <th className="px-4 py-3">PAID</th>
+                <th className="px-4 py-3">DELIVERED</th>
+                <th className="px-4 py-3"></th>
+              </tr>
+            </thead>
+
+            <tbody className="divide-y text-black divide-gray-200 text-sm">
+              {orders.map((order) => (
+                <tr key={order._id} className="hover:bg-gray-50">
+                  <td className="px-4 py-7">
+                    <img
+                      src={order.orderItems[0].image}
+                      alt={order._id}
+                      className="w-20 object-cover rounded-md"
+                    />
+                  </td>
+                  <td className="px-4 py-2">{order._id}</td>
+                  <td className="px-4 py-2">
+                    {order.user ? order.user.username : "N/A"}
+                  </td>
+                  <td className="px-4 py-2">
+                    {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
+                  </td>
+                  <td className="px-4 py-2">${order.totalPrice}</td>
+                  <td className="px-4 py-2">
+                    <span
+                      className={`px-2 py-1 text-center rounded font-semibold ${
+                        order.isPaid
+                          ? "bg-green-500 text-white"
+                          : "bg-red-500 text-white"
+                      }`}
+                    >
+                      {order.isPaid ? "Completed" : "Pending"}
+                    </span>
+                  </td>
+                  <td className="px-4 py-2">
+                    <span
+                      className={`px-2 py-1 text-center rounded font-semibold ${
+                        order.isDelivered
+                          ? "bg-green-500 text-white"
+                          : "bg-red-500 text-white"
+                      }`}
+                    >
+                      {order.isDelivered ? "Completed" : "Pending"}
+                    </span>
+                  </td>
+                  <td className="px-4 py-2">
+                    <Link to={`/order/${order._id}`}>
+                      <button className="px-3 py-1 text-white bg-blue-500 rounded">
+                        More
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

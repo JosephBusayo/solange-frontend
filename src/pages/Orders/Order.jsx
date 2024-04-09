@@ -94,7 +94,7 @@ const Order = () => {
   ) : error ? (
     <Messsage variant="danger">{error.data.message}</Messsage>
   ) : (
-    <div className=" bg-[#0E1629] min-h-screen">
+    <div className=" bg-[#fff] text-gray-800 min-h-screen">
       <ContentWrapper>
         <div className="flex flex-col md:flex-row gap-8 px-4 mx-auto pb-8">
           <div className="md:w-2/3">
@@ -183,7 +183,7 @@ const Order = () => {
                 </button>
               ) : (
                 <button
-                  className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-full px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
+                  className="bg-[#0e1629] hover:bg-[#060911] transition-colors text-[#5DD9C1] border-none outline-none w-full px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
                   type="submit"
                 >
                   Not paid
