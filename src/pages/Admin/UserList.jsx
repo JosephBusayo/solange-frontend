@@ -57,8 +57,8 @@ const UserList = () => {
   };
 
   return (
-    <div className="p-4 bg-[#0E1629] min-h-[100vh]">
-      <h1 className="md:text-2xl font-semibold mb-8 flex items-center justify-center uppercase md:border-b-2 md:mx-[40%] text-[#FFF]">
+    <div className="p-4 bg-[#fff] min-h-[100vh]">
+      <h1 className="md:text-2xl font-semibold mb-8 flex items-center justify-center uppercase md:border-b-2 md:mx-[40%] text-[#000]">
         All Users
       </h1>
       {isLoading ? (

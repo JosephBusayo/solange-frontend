@@ -61,7 +61,7 @@ const Register = () => {
           Register
         </h1> */}
         <h1 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2 mt-[5%]">
-          Welcome to LuxeHaven! 👋🏻
+          Welcome to LSolange! 👋🏻
         </h1>
 
         <form
