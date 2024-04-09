@@ -74,7 +74,7 @@ const UserList = () => {
           {/* <AdminMenu /> */}
           <table className="w-full md:w-4/5 mx-auto table-auto">
             <thead>
-              <tr>
+              <tr className="text-black">
                 <th className="px-4 py-2 text-left">ID</th>
                 <th className="px-4 py-2 text-left">NAME</th>
                 <th className="px-4 py-2 text-left">EMAIL</th>
@@ -82,7 +82,7 @@ const UserList = () => {
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-black">
               {users.map((user) => (
                 <tr key={user._id}>
                   <td className="px-4 py-2">{user._id}</td>

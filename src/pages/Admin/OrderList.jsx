@@ -22,7 +22,7 @@ const OrderList = () => {
           {/* <AdminMenu /> */}
 
           <thead className="w-full border">
-            <tr className="mb-[5rem]">
+            <tr className="mb-[5rem] text-black">
               <th className="text-left pl-1">ITEMS</th>
               <th className="text-left pl-1">ID</th>
               <th className="text-left pl-1">USER</th>
@@ -36,7 +36,7 @@ const OrderList = () => {
 
           <tbody>
             {orders.map((order) => (
-              <tr key={order._id}>
+              <tr key={order._id} className="text-black">
                 <td>
                   <img
                     src={order.orderItems[0].image}
@@ -54,7 +54,7 @@ const OrderList = () => {
 
                 <td>$ {order.totalPrice}</td>
 
-                <td className="py-2">
+                <td className="py-2 text-white">
                   {order.isPaid ? (
                     <p className="px-2 py-1 text-center bg-[#2765EC] max-w-[70%] rounded">
                       Completed
@@ -66,7 +66,7 @@ const OrderList = () => {
                   )}
                 </td>
 
-                <td className="px-2 py-2">
+                <td className="px-2 py-2 text-white">
                   {order.isDelivered ? (
                     <p className="px-2 py-1 text-center bg-[#2765EC] max-w-[70%] rounded">
                       Completed
@@ -80,7 +80,7 @@ const OrderList = () => {
 
                 <td>
                   <Link to={`/order/${order._id}`}>
-                    <button className="px-2 py-1 text-center bg-[#2765EC] max-w-[70%] rounded">
+                    <button className="px-2 py-1 text-center text-white bg-[#2765EC] max-w-[70%] rounded">
                       More
                     </button>
                   </Link>
