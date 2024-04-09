@@ -21,8 +21,8 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="bg-[#0E1629] min-h-[100vh]">
-        <div className="">
+      <div className="bg-[#fff]bg-[#0e1629]">
+        <div className="text-black">
           <div className="p-3">
             <div className="text-center text-xl md:text-2xl font-bold">
               All Products ({products.length})
@@ -59,7 +59,7 @@ const AllProducts = () => {
                       <div className="flex justify-between">
                         <Link
                           to={`/admin/product/update/${product._id}`}
-                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#db1143f3] rounded border-none outline-none hover:bg-[#FF2E63]"
+                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#5DD9C1] bg-[#0e1629] hover:bg-[#060911] rounded border-none outline-none"
                         >
                           Update Product
                           <svg

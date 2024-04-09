@@ -96,12 +96,12 @@ const CategoryList = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center md:flex-row pt-10 bg-[#0E1629] min-h-[100vh]">
+    <div className="flex flex-col justify-center md:flex-row pt-10 bg-[#fff] min-h-[100vh]">
       {/* <AdminMenu /> */}
       <ContentWrapper>
-        <div className="px-4">
-          <h1 className="text-xl md:text-3xl font-semibold mb-4 text-[#F6F6F6]">
-            Welcome to LuxeHaven! 👋🏻
+        <div className="px-4 text-black">
+          <h1 className="text-xl md:text-3xl font-semibold mb-4 text-[#000]">
+            Welcome to LSolange! 👋🏻
           </h1>
           <h1 className="text-xl md:text-2xl font-medium mb-2">
             Manage Categories
@@ -120,7 +120,7 @@ const CategoryList = () => {
             {categories?.map((category) => (
               <div key={category._id}>
                 <button
-                  className="border border-[#08D9D6] transition-all ease-in hover:bg-[#02f2ff] text-[#ffffff] hover:text-[#000000] font-bold py-2 px-4 rounded-sm m-3 focus:outline-none  focus:ring-opacity-50"
+                  className="border border-[#2a8c8c] rounded-md transition-all ease-in hover:bg-[#0e1629] text-[#000] hover:text-[#5DD9C1] font-bold py-2 px-4 m-3 focus:outline-none  focus:ring-opacity-50"
                   onClick={() => {
                     {
                       setModalVisible(true);

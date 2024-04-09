@@ -76,7 +76,7 @@ const Login = () => {
             Log In
           </h1>
           <h1 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2">
-            Welcome to LuxeHaven! 👋🏻
+            Welcome to LSolange! 👋🏻
           </h1>
           <p className="text-base md:text-md font-medium italic mb-4 text-gray-600">
             Please sign-in to your account and start the adventure

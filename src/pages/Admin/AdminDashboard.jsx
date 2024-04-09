@@ -89,12 +89,12 @@ const AdminDashboard = () => {
   }, [salesDetail]);
 
   return (
-    <div className="bg-[#0E1629] min-h-[100vh]">
+    <div className="bg-[#fff] min-h-[100vh]">
       <ContentWrapper>
         <section className="flex flex-col">
           <div className="w-[80%] flex justify-around flex-wrap">
             <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
-              <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
+              <div className="font-bold rounded-full w-[3rem] bg-[#5DD9C1] text-center p-3 text-black">
                 $
               </div>
 
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
               </h1>
             </div>
             <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
-              <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
+              <div className="font-bold rounded-full w-[3rem] bg-[#5DD9C1] text-center p-3 text-black">
                 $
               </div>
 
@@ -114,7 +114,7 @@ const AdminDashboard = () => {
               </h1>
             </div>
             <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
-              <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
+              <div className="font-bold rounded-full w-[3rem] bg-[#5DD9C1] text-center p-3 text-black">
                 $
               </div>
 
@@ -125,7 +125,7 @@ const AdminDashboard = () => {
             </div>
           </div>
 
-          <div className="mt-[4rem] text-[#fff]">
+          <div className="mt-[4rem] text-[#000]">
             <Chart
               options={state.options}
               series={state.series}

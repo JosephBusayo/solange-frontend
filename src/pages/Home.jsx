@@ -47,11 +47,11 @@ const Home = () => {
                   Explore Solange's Curated Collection
                 </h1>
                 <p className="text-[#222222] text-sm md:text-base font-medium">
-                  Dive into a world of elegance and choice with Luxehaven's
+                  Dive into a world of elegance and choice with LSolange's
                   carefully curated selection. Each product is a testament to
                   quality and style, ensuring your shopping experience is
                   nothing short of extraordinary. Discover the latest trends and
-                  timeless classics – Luxehaven, where every click unveils a new
+                  timeless classics – LSolange, where every click unveils a new
                   level of sophistication.
                 </p>
               </div>
