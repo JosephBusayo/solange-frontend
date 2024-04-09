@@ -8,7 +8,7 @@ const OrderList = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
 
   return (
-    <div className="bg-[#0E1629] min-h-[100vh]">
+    <div className="bg-gray-200 min-h-[100vh]">
       {isLoading ? (
         <div className="w-full h-[80vh] flex justify-center items-center">
           <Loader />
