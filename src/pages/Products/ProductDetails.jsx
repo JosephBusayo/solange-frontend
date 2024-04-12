@@ -68,13 +68,13 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="bg-[#0F172A]">
+    <div className="bg-[#fff]">
       <ContentWrapper>
         <div className="min-h-[100vh] pb-8">
           <div className="mb-4">
             <Link
               to="/"
-              className="text-white font-semibold text-base xl:text-lg"
+              className="text-black font-semibold text-base xl:text-lg"
             >
               <BsArrowLeft size={25} />
             </Link>
@@ -90,7 +90,7 @@ const ProductDetails = () => {
             </Message>
           ) : (
             <>
-              <div className="px-4 w-full">
+              <div className="px-4 w-full text-black">
                 <div className="container flex mx-auto flex-col md:flex-row gap-8 flex-wrap w-full relative">
                   <div className="w-full md:w-1/3 overflow-hidden container flex mx-auto">
                     <img
@@ -106,15 +106,15 @@ const ProductDetails = () => {
                       <h2 className="text-base md:text-2xl font-semibold">
                         {product?.name}
                       </h2>
-                      <p className="my-4 text-sm md:text-base text-[#97A1AF] ">
+                      <p className="my-4 text-sm md:text-base text-[#000] ">
                         {product?.description}
                       </p>
 
                       <p className="text-base md:text-xl font-semibold xl:font-bold mb-4 text-[#009650]">
-                        <span className="font-medium text-[#dddfe3]">
+                        <span className="font-medium text-gray-700">
                           Price:
                         </span>{" "}
-                        <s className="font-medium text-[#97A1AF] mr-2">
+                        <s className="font-medium text-gray-500 mr-2">
                           $ {product?.price * 2}
                         </s>{" "}
                         $ {product?.price}
@@ -123,30 +123,29 @@ const ProductDetails = () => {
                       <div className="flex gap-6 my-4">
                         <div className="flex flex-col gap-3">
                           <h1 className="flex items-center ">
-                            <FaStore className="mr-2 text-white" /> Brand:{" "}
+                            <FaStore className="mr-2 " /> Brand:{" "}
                             {product?.brand}
                           </h1>
                           <h1 className="flex items-center">
-                            <FaClock className="mr-2 text-white" /> Added:{" "}
+                            <FaClock className="mr-2 " /> Added:{" "}
                             {moment(product?.createAt).format("MMM Do YY")}
                           </h1>
                           <h1 className="flex items-center">
-                            <FaStar className="mr-2 text-white" /> Reviews:{" "}
+                            <FaStar className="mr-2 " /> Reviews:{" "}
                             {product?.numReviews}
                           </h1>
                         </div>
 
                         <div className="flex flex-col gap-3">
                           <h1 className="flex items-center ">
-                            <FaStar className="mr-2 text-white" /> Ratings:{" "}
-                            {rating}
+                            <FaStar className="mr-2 " /> Ratings: {rating}
                           </h1>
                           <h1 className="flex items-center ">
-                            <FaShoppingCart className="mr-2 text-white" />{" "}
-                            Quantity: {product?.quantity}
+                            <FaShoppingCart className="mr-2 " /> Quantity:{" "}
+                            {product?.quantity}
                           </h1>
                           <h1 className="flex items-center">
-                            <FaBox className="mr-2 text-white" /> In Stock:{" "}
+                            <FaBox className="mr-2 " /> In Stock:{" "}
                             {product?.countInStock}
                           </h1>
                         </div>
@@ -163,7 +162,7 @@ const ProductDetails = () => {
                             <select
                               value={qty}
                               onChange={(e) => setQty(e.target.value)}
-                              className="rounded-sm outline-none p-1 border text-white bg-[#0F172A]"
+                              className="rounded-sm outline-none p-1 border  bg-[#0F172A]"
                             >
                               {[...Array(product?.countInStock).keys()].map(
                                 (x) => (
@@ -180,7 +179,7 @@ const ProductDetails = () => {
                         <button
                           onClick={addToCartHandler}
                           disabled={product.countInStock === 0}
-                          className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-full  px-4 py-2 rounded cursor-pointer text-base font-semibold mt-12 mb-4"
+                          className="bg-[#0e1629] hover:bg-[#060911] transition-colors ease-in-out duration-500 text-[#5DD9C1]  border-none outline-none w-full  px-4 py-2 rounded cursor-pointer text-base font-semibold mt-12 mb-4"
                         >
                           Add To Cart
                         </button>

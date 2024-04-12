@@ -21,7 +21,7 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="bg-[#fff]bg-[#0e1629]">
+      <div className="bg-[#fff]">
         <div className="text-black">
           <div className="p-3">
             <div className="text-center text-xl md:text-2xl font-bold">
