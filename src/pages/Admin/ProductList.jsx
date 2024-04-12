@@ -9,6 +9,9 @@ import {
 import { useFetchCategoriesQuery } from "../../redux/api/categoryApiSlice";
 import AdminMenu from "./AdminMenu";
 import ContentWrapper from "../../components/ContentWrapper.jsx";
+
+
+
 const ProductList = () => {
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
@@ -29,45 +32,52 @@ const ProductList = () => {
     e.preventDefault();
 
     try {
-      const productData = new FormData();
-      productData.append("image", image);
-      productData.append("name", name);
-      productData.append("description", description);
-      productData.append("price", price);
-      productData.append("category", category);
-      productData.append("quantity", quantity);
-      productData.append("brand", brand);
-      productData.append("countInStock", stock);
+      const productData = {
+        name,
+        description,
+        price,
+        category,
+        quantity,
+        brand,
+        countInStock: stock,
+        image: image ? image.name : "", // Adjusted to send image name
+      };
+      const response = await fetch("/api/v1/products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(productData),
+      });
 
-      const { data } = await createProduct(productData);
-
-      if (data.error) {
-        toast.error("Product create failed. Try Again.");
-      } else {
-        toast.success(`${data.name} is created`);
-        navigate("/");
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to create product");
       }
+
+      const data = await response.json();
+      toast.success(`${data.name} is created`);
+      navigate("/");
     } catch (error) {
       console.error(error);
       toast.error("Product create failed. Try Again.");
     }
   };
 
+
   const uploadFileHandler = async (e) => {
     const formData = new FormData();
-    // console.log(e.target.files[0]);
-    formData.append("image", e.target.files[0]);
+    formData.append("image", e.target.files[0]); // Change to e.target.files[0]
 
     try {
       const res = await uploadProductImage(formData).unwrap();
       toast.success(res.message);
-      setImage(res.image);
+      setImage(e.target.files[0]); // Set the image directly
       setImageUrl(res.image);
     } catch (error) {
       toast.error(error?.data?.message || error.error);
     }
   };
-
   return (
     <div className="bg-[#fff] min-h-[100vh]">
       <ContentWrapper>
@@ -103,9 +113,8 @@ const ProductList = () => {
                     name="image"
                     accept="image/*"
                     onChange={uploadFileHandler}
-                    className={`${
-                      !image ? "hidden" : " "
-                    } ml-6 mt-1 p-2 bg-gray-200 placeholder-[#eaeaeab9] text-[#db1143f3] outline-none border-none text-base `}
+                    className={`${!image ? "hidden" : " "
+                      } ml-6 mt-1 p-2 bg-gray-200 placeholder-[#eaeaeab9] text-[#db1143f3] outline-none border-none text-base `}
                   />
                 </label>
               </div>
@@ -198,7 +207,7 @@ const ProductList = () => {
                   </button>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
